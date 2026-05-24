@@ -6,9 +6,8 @@
 //
 // Inputs (passed in the constructor):
 //   meta             — world_meta.json (bounds, grid size, IR/OR)
-//   biomes           — biomes.json (legend metadata only, not used for render)
-//   dataTextureUrl   — URL of world_data.png  (R,G,B=color, A=landtype)
-//   elevTextureUrl   — URL of world_elev.png  (R=elevation_u8)  [optional]
+//   dataTextureUrl   — URL of world_data.png  (R,G,B=color, A=255)
+//   elevTextureUrl   — URL of world_elev.png  (R=elev, G=landtype) [optional]
 //
 // Per-frame controls (set with `layer.setOption(key, value)`):
 //   showChunks       — bool, draw 32-small-hex chunk grid
@@ -347,13 +346,12 @@ function linkProgram(gl, vs, fs, attribLocations = {}) {
 }
 
 export class HexLayer {
-  constructor({ meta, biomes, dataTextureUrl, elevTextureUrl }) {
+  constructor({ meta, dataTextureUrl, elevTextureUrl }) {
     this.id = "hex-layer";
     this.type = "custom";
     this.renderingMode = "2d";
 
     this.meta = meta;
-    this.biomes = biomes;
     this.dataTextureUrl = dataTextureUrl;
     this.elevTextureUrl = elevTextureUrl
       || (dataTextureUrl ? dataTextureUrl.replace(/world_data\.png$/, "world_elev.png") : null);
