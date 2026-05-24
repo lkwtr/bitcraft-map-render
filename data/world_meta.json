@@ -1,0 +1,40 @@
+{
+  "gwm_width": 4000,
+  "gwm_height": 4000,
+  "active_region_band_oz": [
+    800,
+    3200
+  ],
+  "active_region_band_ox": [
+    800,
+    3200
+  ],
+  "outer_radius": 1.0,
+  "inner_radius": 0.8660254037844386,
+  "world_pixel_w": 10391.438820009478,
+  "world_pixel_h": 6000.5,
+  "map_lng_range": [
+    0.0,
+    0.1
+  ],
+  "map_lat_range": [
+    0.0,
+    0.057744650225391284
+  ],
+  "biome_count": 17,
+  "land_types": {
+    "0": "Empty",
+    "1": "Land",
+    "2": "Ocean",
+    "3": "Contested",
+    "4": "Lake",
+    "5": "River",
+    "6": "Swamp"
+  },
+  "data_texture": "world_data.png",
+  "elev_texture": "world_elev.png",
+  "encoding": {
+    "world_data.png": "RGBA: R,G,B=raw color, A=255 (opaque)",
+    "world_elev.png": "RGBA: R=elev_u8, G=landtype (0=Empty), BA=reserved"
+  }
+}
